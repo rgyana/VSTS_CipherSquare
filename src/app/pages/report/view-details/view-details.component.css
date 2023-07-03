@@ -1,0 +1,9 @@
+.no-zindex {
+    z-index: 0 !important;
+}
+
+
+/* Rough */
+#content {
+    width: 92% !important;
+}

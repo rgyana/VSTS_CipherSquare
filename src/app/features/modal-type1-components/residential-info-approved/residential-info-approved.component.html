@@ -1,0 +1,50 @@
+<div class="d-flex flex-wrap align-items-end" *ngIf="this.modalCompData?.result">
+
+    <div class="col-12 my-2">
+        <p class="text-black">Full Address</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.residential_details?.address ?
+            this.modalCompData?.result?.residential_details?.address : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">City</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.residential_details?.city ?
+            this.modalCompData?.result?.residential_details?.city : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">District</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.residential_details?.district ?
+            this.modalCompData?.result?.residential_details?.district : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">State</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.residential_details?.state ?
+            this.modalCompData?.result?.residential_details?.state : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">PIN Code</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.residential_details?.pincode ?
+            this.modalCompData?.result?.residential_details?.pincode : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Landmark</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.residential_details?.landmark ?
+            this.modalCompData?.result?.residential_details?.landmark : 'No Data'}}</p>
+    </div>
+
+    <div class="col-4 my-2 ms-auto">
+        <p class=" rounded-2 form-control text-white text-center"
+            [ngClass]="[this.modalCompData?.result?.residential_details?.verified == 1? 'bg-success' : 'bg-warning']">
+            {{this.modalCompData?.result?.residential_details?.verified == 1? 'Verified' : 'Not
+            Verified'}} </p>
+    </div>
+
+    <div class="col-4 my-3 ms-auto">
+        <button class="btn btn-info form-control" (click)="onEditBtnClick()">Edit</button>
+    </div>
+</div>

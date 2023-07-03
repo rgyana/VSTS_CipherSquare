@@ -1,0 +1,28 @@
+<div class="dashboard-analytics">
+
+    <!--  BEGIN NAVBAR  -->
+    <app-header></app-header>
+    <!--  END NAVBAR  -->
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN SIDEBAR  -->
+        <app-sidebar></app-sidebar>
+        <!--  END SIDEBAR  -->
+
+        <!--  BEGIN CONTENT AREA  -->
+        <div class="flex-grow-1">
+
+            <router-outlet></router-outlet>
+
+        </div>
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+</div>

@@ -1,0 +1,52 @@
+<!-- main content -->
+<div class="statbox box box-shadow">
+    <div class="widget">
+        <div class="widget-content widget-content-area p-4 br-4 d-flex">
+
+            <!-- top panel from -->
+            <form class="col-10" [formGroup]="topPanelForm" (ngSubmit)="onSearchButton()">
+                <div class="d-flex ">
+
+                    <!-- email control -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
+                        <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+                    </div>
+                    <!-- email control ends -->
+
+                    <!-- check status -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
+                        <select class="form-control form-select">
+                            <option selected disabled>Check Status</option>
+                            <option>Pre Appointed</option>
+                            <option>Appointed</option>
+                            <option>Incomplete</option>
+                        </select>
+                    </div>
+                    <!-- check status ends -->
+
+                    <!-- search button -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
+                        <!-- <input type="text" class="form-control" placeholder="Search"> -->
+                        <button type="submit" class="btn btn-success form-control">
+                            Search
+                        </button>
+                    </div>
+                    <!-- search button ends -->
+
+                </div>
+            </form>
+            <!-- top panel form ends -->
+
+            <!-- add user button -->
+            <div class="col-2 col-sm-6 col-md-4 col-lg-2 my-2">
+                <button type="submit" class="btn btn-success form-control" (click)="openAddUserModal()">
+                    +Add User
+                </button>
+            </div>
+            <!-- add user button ends -->
+
+        </div>
+    </div>
+
+</div>
+<!-- main content ends -->

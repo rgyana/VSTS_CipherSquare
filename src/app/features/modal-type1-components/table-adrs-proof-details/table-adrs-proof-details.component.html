@@ -1,0 +1,26 @@
+<table class="table table-bordered" *ngIf="addressProofTableData">
+    <thead>
+        <tr>
+            <th class="px-2">NAME</th>
+            <th class="px-2">FATHER NAME</th>
+            <th class="px-2">DOB</th>
+            <th class="px-2">GENDER</th>
+            <th class="px-2">DISTRICT</th>
+            <th class="px-2">STATE</th>
+            <th class="px-2">ID NUMBER</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="px-2">{{addressProofTableData.fatherName ? addressProofTableData.fatherName : 'No Data'}}</td>
+            <td class="px-2">{{addressProofTableData.name ? addressProofTableData.name : 'No Data'}}</td>
+            <td class="px-2">{{addressProofTableData.dob ? addressProofTableData.dob : 'No Data'}}</td>
+            <td class="px-2">{{addressProofTableData.gender ? addressProofTableData.name : 'No Data'}}</td>
+            <td class="px-2">{{addressProofTableData.district ? addressProofTableData.district : 'No Data'}}</td>
+            <td class="px-2">{{addressProofTableData.state ? addressProofTableData.state : 'No Data'}}</td>
+            <td class="px-2">{{addressProofTableData.epicNumber ? addressProofTableData.epicNumber : 'No
+                Data'}}
+            </td>
+        </tr>
+    </tbody>
+</table>

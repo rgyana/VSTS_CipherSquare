@@ -1,0 +1,5 @@
+export enum UserStatus {
+  PREAPPROVED = 'PREAPPROVED',
+  APPROVED = 'APPROVED',
+  INCOMPLETE = 'INCOMPLETE',
+}

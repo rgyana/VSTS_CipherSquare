@@ -1,0 +1,296 @@
+<div class="modal-content">
+
+    <!-- Modal header -->
+    <div class="modal-header d-flex justify-content-between">
+        <h3 class="modal-title fs-3" id="exampleModalLabel">{{ modalData.heading }}</h3>
+        <div>
+            <button type="button" class="btn btn-success me-3" (click)="activeModal.close('Close click')">{{
+                modalData.primaryBtnName }}</button>
+            <button type="button" class="btn btn-warning" (click)="activeModal.close('Close click')">{{
+                modalData.secondaryBtnName }}</button>
+        </div>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body d-flex mb-4">
+        <!-- <p class="modal-text">{{ modalData.contentData | json }}</p> -->
+
+        <!-- Side Nav Btns -->
+        <div class="sidebar-nav-btns d-flex flex-column col-3">
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn1' }"
+                (click)="sideNavBtnActive = 'btn1'"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>Update Mobile Number</button>
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn2' }"
+                (click)="sideNavBtnActive = 'btn2'"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>Basic Details</button>
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn3' }"
+                (click)="sideNavBtnActive = 'btn3'"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>Residential Information</button>
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn4' }"
+                (click)="sideNavBtnActive = 'btn4'"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>Business Information</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn5' }"
+                (click)="onPanDetailsBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 me-2">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>Pan Details</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn6' }"
+                (click)="onAddressProofBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 me-2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>Address Proof</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn7' }"
+                (click)="onSecondaryProofBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>Secondary Proof</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn8' }"
+                (click)="onBankVerificationBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>Bank Verification</button>
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn9' }"
+                (click)="sideNavBtnActive = 'btn9'"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>KYC Mode</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn10' }"
+                (click)="onVideoVerificationBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>Video Verification</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn11' }"
+                (click)="onNameMatchResultBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
+                </svg>Name Match Result</button>
+
+            <button class="btn mb-3 text-start" [ngClass]="{'btn-primary': sideNavBtnActive === 'btn12' }"
+                (click)="onForgeryResponseBtnClick()"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    class="css-i6dzq1 me-2">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>Forgery Response</button>
+        </div>
+
+        <!-- Nav Contents -->
+        <div class="nav-contents col-9">
+            <div class="container-fluid p-3 border border-width-2px border-primary rounded-4 h-100 overflow-auto">
+
+                <div [ngSwitch]="sideNavBtnActive">
+
+
+                    <!-- Mobile number update -->
+                    <div *ngSwitchCase="'btn1'">
+                        <app-update-mobile-number [modalCompData]="modalData.contentData"
+                            (updateMobileNumberEmitted)="fetchUpdatedMobileNumber($event)"></app-update-mobile-number>
+                    </div>
+
+
+                    <!-- Basic Details -->
+                    <div *ngSwitchCase="'btn2'">
+                        <div class="row" *ngIf="!isUpdatingBasicDetails">
+                            <app-basic-details-approved [modalCompData]="modalData.contentData"
+                                (editBtnBooleanEmitter)="fetchBasicDetailsBeforeUpdate($event)"></app-basic-details-approved>
+                        </div>
+
+                        <div class="row" *ngIf="isUpdatingBasicDetails">
+                            <app-basic-details-update [modalCompData]="modalData.contentData"
+                                (updateBasicDetailsEmitted)="fetchBasicDetailsAfterUpdate($event)"></app-basic-details-update>
+                        </div>
+
+                        <div class="row" *ngIf="!isUpdatingBasicDetails">
+                            <div class="col-12 mt-4 mb-2 px-4">
+                                <p class="text-black">Remarks</p>
+                                <p class="bg-light-primary rounded-2 form-control text-black">
+                                    {{this.modalData?.contentData?.remarks ?
+                                    this.modalData?.contentData?.remarks : 'No Data'}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Residential Information -->
+                    <div *ngSwitchCase="'btn3'">
+                        <div class="row" *ngIf="!isUpdatingResidentialsInformation">
+                            <app-residential-info-approved [modalCompData]="modalData.contentData"
+                                (editBtnBooleanEmitter)="fetchResidentialsInformationBeforeUpdate($event)">
+                            </app-residential-info-approved>
+                        </div>
+
+                        <div class="row" *ngIf="isUpdatingResidentialsInformation">
+                            <app-residential-info-update [modalCompData]="modalData.contentData"
+                                (updateResidentialInformationEmitted)="fetchResidentialsInformationAfterUpdate($event)">
+                            </app-residential-info-update>
+                        </div>
+
+                        <div class="row" *ngIf="!isUpdatingResidentialsInformation">
+                            <div class="col-12 mt-4 mb-2 px-4">
+                                <p class="text-black">Remarks</p>
+                                <p class="bg-light-primary rounded-2 form-control text-black">
+                                    {{this.modalData?.contentData?.remarks ?
+                                    this.modalData?.contentData?.remarks : 'No Data'}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Business Information -->
+                    <div *ngSwitchCase="'btn4'">
+                        <div class="row" *ngIf="!isUpdatingBusinessInformation">
+                            <app-business-info-approved [modalCompData]="modalData.contentData"
+                                (editBtnBooleanEmitter)="fetchBusinessInformationBeforeUpdate($event)">
+                            </app-business-info-approved>
+                        </div>
+
+                        <div class="row" *ngIf="isUpdatingBusinessInformation">
+                            <app-business-info-update [modalCompData]="modalData.contentData"
+                                (updateBusinessInformationEmitted)="fetchBusinessInformationAfterUpdate($event)"></app-business-info-update>
+                        </div>
+
+                        <div class="row" *ngIf="!isUpdatingBusinessInformation">
+                            <div class="col-12 mt-4 mb-2 px-4">
+                                <p class="text-black">Remarks</p>
+                                <p class="bg-light-primary rounded-2 form-control text-black">
+                                    {{this.modalData?.contentData?.remarks ?
+                                    this.modalData?.contentData?.remarks : 'No Data'}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pan details -->
+                    <div *ngSwitchCase="'btn5'">
+                        <div class="col-12">
+                            <app-pan-details [modalCompData]="modalData.contentData"
+                                [panFetchResponse]="panFetchResponse" [panExtractionResponse]="panExtractionResponse"
+                                [panThumbnailFileNameSrc]="panThumbnailFileNameSrc"></app-pan-details>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="col-12 mt-4 mb-2 px-0">
+                                <label for="remarks" class="form-label">Remarks</label>
+                                <input type="text" class="form-control" name="userName"
+                                    [value]="modalData.contentData.remarks">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Proof -->
+                    <div *ngSwitchCase="'btn6'">
+                        <div class="col-12">
+                            <app-address-proof [modalCompData]="modalData.contentData"
+                                [addressProofResponse]="addressProofResponse"
+                                [proofPhotoThumbnailFileNameSrc]="addressProofThumbFrontPhotoSrc"
+                                [proofPhotoThumbnailBackFileNameSrc]="addressProofThumbBackPhotoSrc"></app-address-proof>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="col-12 mt-4 mb-2 px-0">
+                                <label for="remarks" class="form-label">Remarks</label>
+                                <input type="text" class="form-control" name="userName"
+                                    [value]="modalData.contentData.remarks">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Proof -->
+                    <div *ngSwitchCase="'btn7'">
+                        <div class="col-12">
+                            <app-secondary-proof [modalCompData]="modalData.contentData"
+                                [secondaryProofResponse]="secondaryProofResponse"
+                                [secondaryProof1ThumbFrontPhotoSrc]="secondaryProof1ThumbFrontPhotoSrc"
+                                [secondaryProof1ThumbBackPhotoSrc]="secondaryProof1ThumbBackPhotoSrc"></app-secondary-proof>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="col-12 mt-4 mb-2 px-0">
+                                <label for="remarks" class="form-label">Remarks</label>
+                                <input type="text" class="form-control" name="userName"
+                                    [value]="modalData.contentData.remarks">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bank Verification -->
+                    <div *ngSwitchCase="'btn8'">
+                        <div class="col-12 px-0">
+                            <app-bank-verification [modalCompData]="modalData.contentData"
+                                [bankVerificationResponse]="bankVerificationResponse"
+                                [passbookThumbPhotoSrc]="passbookThumbPhotoSrc"></app-bank-verification>
+                        </div>
+
+                        <div class="col-12 my-2">
+                            <label for="remarks" class="form-label">Remarks</label>
+                            <input type="text" class="form-control" name="userName"
+                                [value]="modalData.contentData.remarks">
+                        </div>
+                    </div>
+
+
+                    <!-- KYC Mode -->
+                    <div *ngSwitchCase="'btn9'">
+                        <app-kyc-mode [modalCompData]="modalData.contentData"></app-kyc-mode>
+                    </div>
+
+                    <!-- Video Verification -->
+                    <div *ngSwitchCase="'btn10'">
+                        <app-video-verification [modalCompData]="modalData.contentData"
+                            [videoVerificationResponse]="videoVerificationResponse"></app-video-verification>
+                    </div>
+
+                    <!-- Name Match Result -->
+                    <div *ngSwitchCase="'btn11'">
+                        <app-name-match-result [modalCompData]="modalData.contentData"
+                            [nameMatchResultResponse]="nameMatchResultResponse"></app-name-match-result>
+                    </div>
+
+                    <!-- Forgery Response -->
+                    <div *ngSwitchCase="'btn12'">
+                        <app-forgery-response [modalCompData]="modalData.contentData"
+                            [forgeryResponse]="forgeryResponse"></app-forgery-response>
+                    </div>
+
+                    <div *ngSwitchDefault>Error</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

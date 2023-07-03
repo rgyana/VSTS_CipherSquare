@@ -1,0 +1,20 @@
+<div class="px-3">
+    <h2 class="fs-2 text-primary">Update Mobile Number</h2>
+</div>
+
+<form [formGroup]="updateMobileNumberForm" (ngSubmit)="onUpdateMobileNumberBtnClick()">
+    <div class="d-flex flex-wrap align-items-end">
+
+        <div class="col-4 my-2">
+            <label for="mobileNumber" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" name="mobileNumber" formControlName="mobileNumber">
+        </div>
+
+        <div class="col-4 my-2 ms-auto">
+            <button type="submit" class="btn btn-primary form-control">
+                Update
+            </button>
+        </div>
+
+    </div>
+</form>

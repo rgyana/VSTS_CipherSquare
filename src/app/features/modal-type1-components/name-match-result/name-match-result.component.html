@@ -1,0 +1,40 @@
+<div class="d-flex flex-wrap align-items-end" *ngIf="this.nameMatchResultResponse?.result">
+
+    <div class="col-4 my-2">
+        <p class="text-black">Name 1</p>
+        <p class="bg-light-primary rounded-2 px-3 py-2 text-black">
+            {{this.nameMatchResultResponse.result.name1 ? this.nameMatchResultResponse.result.name1 : 'Nil'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Name 2</p>
+        <p class="bg-light-primary rounded-2 px-3 py-2 text-black">
+            {{this.nameMatchResultResponse.result.name2 ? this.nameMatchResultResponse.result.name2 : 'Nil'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Match Between</p>
+        <p class="bg-light-primary rounded-2 px-3 py-2 text-black">
+            {{this.nameMatchResultResponse.result.matchBetween ? this.nameMatchResultResponse.result.matchBetween :
+            'Nil'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Match Reason</p>
+        <p class="bg-light-primary rounded-2 px-3 py-2 text-black">
+            {{this.nameMatchResultResponse.result.matchReason ? this.nameMatchResultResponse.result.matchReason :
+            'Nil'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Match Result</p>
+        <p class="bg-light-primary rounded-2 px-3 py-2 text-black">
+            {{this.nameMatchResultResponse.result.matchResult ? this.nameMatchResultResponse.result.matchResult :
+            'Nil'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Match Score</p>
+        <p class="bg-light-primary rounded-2 px-3 py-2 text-black">
+            {{this.nameMatchResultResponse.result.matchScore ? this.nameMatchResultResponse.result.matchScore : 'Nil'}}
+        </p>
+    </div>
+
+</div>
+
+<div>{{nameMatchResultResponse | json}}</div>

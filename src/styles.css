@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css." */
+
+.btn-no-animation {
+    -webkit-transform: translate(none) !important;
+    transform: translate(none) !important;
+}
+
+.btn-no-animation:hover {
+    -webkit-transform: translate(none) !important;
+    transform: translate(none) !important;
+}
+
+.custom-size .modal-dialog {
+    max-width: 1300px;
+    /* set the width of the modal */
+}
+
+.myCustomModalClass .modal-dialog {
+    max-width: 1300px;
+    /* max-width: calc(100vw - 450px); */
+}

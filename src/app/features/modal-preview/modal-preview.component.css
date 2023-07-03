@@ -1,0 +1,11 @@
+.no-zindex {
+    z-index: 0 !important;
+}
+
+.modal-body {
+    max-height: 41.25rem;
+}
+
+.modal-body::-webkit-scrollbar {
+    display: none;
+}

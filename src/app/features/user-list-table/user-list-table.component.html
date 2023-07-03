@@ -1,0 +1,97 @@
+<div class="widget px-0">
+    <div class="widget-content widget-content-area br-6" *ngIf="(userDetailsArray$ |async) as userDetailsArray">
+        <div id="zero-config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+
+
+            <div class="dt--top-section">
+                <div class="row align-items-center">
+                    <div class="col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center">
+                        <h5 class="m-2 p-1">Total Record: {{userDetailsArray.length}}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table content datas -->
+            <div class="table-responsive">
+                <table id="zero-config" class="table dt-table-hover dataTable text-center" role="grid"
+                    aria-describedby="zero-config_info">
+
+                    <!-- table headings -->
+                    <thead>
+                        <tr role="row">
+                            <th scope="col">ID</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Status Assingned (For Staff)</th>
+                            <th scope="col">Created</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <!-- table headings ends -->
+
+                    <!-- table details -->
+                    <tbody
+                        *ngFor="let data of userDetailsArray | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+                        <tr>
+                            <td class="text-wrap">{{data.id}}</td>
+                            <td class="text-wrap"> {{data.firstname}}</td>
+                            <td class="text-wrap">{{data.lastname}}</td>
+                            <td class="text-wrap">{{data.email}}</td>
+                            <td class="text-wrap">{{data.role}}</td>
+                            <td class="text-wrap">
+                                <span class="badge"
+                                    [ngClass]="{'badge-success' : data.status == userStatus.APPROVED, 'badge-warning': data.status == userStatus.PREAPPROVED, 'badge-danger': data.status == userStatus.INCOMPLETE}">{{data.status}}</span>
+                            </td>
+                            <td class="text-wrap">{{ data.created | date:'y-MM-dd' }}</td>
+
+                            <!-- action buttons -->
+                            <td class="d-flex align-items-center">
+
+                                <!-- update button -->
+                                <button type="submit" class="btn" (click)="openEditUserModal(data)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="#1abc9c" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-edit-2">
+                                        <path d="M12 20h9"></path>
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                    </svg>
+                                </button>
+                                <!-- update button ends -->
+
+                                <!-- toggle button -->
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-6 ">
+                                    <label class="switch s-icons s-outline  s-outline-success mt-3">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <!-- toggle buttton ends -->
+
+                            </td>
+                            <!-- action button ends -->
+
+                        </tr>
+                    </tbody>
+                    <!-- table details ends -->
+
+                </table>
+            </div>
+            <!-- table content datas ends -->
+
+            <!-- pagination -->
+            <div class=" table-footer-part d-flex justify-content-between align-items-center mt-3">
+                <div class="ms-4 px-3 py-2 text-primary fw-bold border border-primary rounded">
+                    Showing page {{page}} of {{ userDetailsArray.length / itemsPerPage | ceil}}
+                </div>
+
+                <div class="me-4 fw-bold">
+                    <pagination-controls (pageChange)="page = $event" class="float-right"></pagination-controls>
+                </div>
+            </div>
+            <!-- pagination ends -->
+
+        </div>
+    </div>
+</div>

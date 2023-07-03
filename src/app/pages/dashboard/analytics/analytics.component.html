@@ -1,0 +1,56 @@
+<div id="content" class="main-content">
+    <div class="layout-px-spacing bg-color">
+
+        <!-- breadscrum -->
+        <div class="page-header">
+            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="javascript:void(0);">Analytics</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- breadscrum ends -->
+
+        <!-- main content -->
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+
+                <!-- widget area -->
+                <div class="widget">
+                    <div class="widget-content widget-content-area rounded-4">
+
+                        <!-- widget heading -->
+                        <div class="widget-heading">
+                            <h6 class="font-weight-bold">Total Records</h6>
+                        </div>
+                        <!-- widget heading ends -->
+
+                        <!-- row 1 -->
+                        <div class="d-flex justify-content-around flex-wrap">
+
+                            <!-- card -->
+                            <div class="card component-card_1 m-3 rounded-4" *ngFor="let card of cardDetails">
+                                <div class="card-body">
+                                    <div class="w-icon"><svg></svg></div>
+                                    <h4 class="card-title">{{card[0] | replaceUnderscore | titlecase}}</h4>
+                                    <p class="card-text fw-bold display-6">{{card[1]}}
+                                    </p>
+                                    <button class="btn btn-primary btn-block">View Report</button>
+                                </div>
+                            </div>
+                            <!-- card ends -->
+
+                        </div>
+                        <!-- row 1 ends -->
+                    </div>
+                </div>
+
+                <!-- widget area ends -->
+            </div>
+            <!-- main content ends -->
+
+        </div>
+    </div>

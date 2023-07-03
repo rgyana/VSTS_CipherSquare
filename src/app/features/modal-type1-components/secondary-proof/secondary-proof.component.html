@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-end align-items-center">
+
+    <!-- <div class="n-chk">
+        <label class="new-control new-checkbox checkbox-primary fs-6 text-dark">
+            <input type="checkbox" class="new-control-input" checked>
+            <span class="new-control-indicator"></span>
+            <span class="ms-1">Same as above</span>
+        </label>
+    </div> -->
+
+    <div>
+        <button type="button" class="btn btn-primary me-3">Move to Recode Folder</button>
+        <button type="button" class="btn btn-warning me-3">Reject</button>
+    </div>
+</div>
+
+<div class="d-flex">
+
+    <div class="col-6 d-flex flex-column mt-2 px-0" *ngIf="secondaryProofResponse?.result">
+
+        <div class="address-proof-details d-flex flex-column align-items-start mb-2">
+            <div class="fs-6 text-dark">Secondary Proof: <span
+                    class="fs-6 fw-semibold">{{secondaryProofResponse?.result[0]?.kyc_type ?
+                    secondaryProofResponse?.result[0]?.kyc_type : 'Not Fount'}}</span></div>
+            <p class="text-dark">{{secondaryProofResponse?.result[0]?.kyc_mode ?
+                secondaryProofResponse?.result[0]?.kyc_mode : 'Not Found'}}</p>
+        </div>
+
+        <div class="addressproof-pic d-flex mt-2">
+            <!-- Front-side photo -->
+            <div class="col-6 d-flex flex-column align-items-end px-0 me-3">
+                <div class="rounded-3 bg-light-secondary p-3 w-100">
+                    <img class="rounded w-100" *ngIf="secondaryProofResponse?.result[0]?.proofPhoto"
+                        [src]="secondaryProof1ThumbFrontPhotoSrc" alt="proof_front_thumb">
+                    <p class="my-4 py-3 text-center" *ngIf="!secondaryProofResponse?.result[0]?.proofPhoto">
+                        No Image Found
+                    </p>
+                </div>
+                <a class="fs-6 mt-2 text-primary" *ngIf="this.secondaryProofResponse?.result[0]?.proofPhoto"
+                    (click)="openPhotoInNewTab(this.secondaryProofResponse.result[0].proofPhoto,'Secondary Proof Front-side')"
+                    role="button">Open in new tab</a>
+            </div>
+
+            <!-- Back-side photo -->
+            <div class="col-6 d-flex flex-column align-items-end px-0 me-3">
+                <div class=" rounded-3 bg-light-secondary p-3 w-100">
+                    <img class="rounded w-100" *ngIf="secondaryProofResponse?.result[0]?.proofPhotoBack"
+                        [src]="secondaryProof1ThumbBackPhotoSrc" alt="proof_back_thumb">
+                    <p class="my-4 py-3 text-center" *ngIf="!secondaryProofResponse?.result[0]?.proofPhoto">
+                        No Image Found
+                    </p>
+                </div>
+                <a class="fs-6 mt-2 text-primary" *ngIf="secondaryProofResponse?.result[0]?.proofPhotoBack"
+                    (click)="openPhotoInNewTab(secondaryProofResponse.result[0].proofPhotoBack,'Secondary Proof Back-side')"
+                    role="button">Open in new tab</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div>
+    {{ secondaryProofResponse|json }}
+</div> -->
+
+
+<div class="col-4 my-2 ms-auto" *ngIf="secondaryProofResponse?.result">
+    <p class=" rounded-2 px-3 py-2 text-white text-center"
+        [ngClass]="[this.secondaryProofResponse.result[0]?.verified == 5? 'bg-success' : 'bg-warning']">
+        {{this.secondaryProofResponse.result[0]?.verified == 5? 'Verified' : 'Not Verified'}}</p>
+</div>

@@ -1,0 +1,7 @@
+.no-zindex {
+  z-index: 0 !important;
+}
+
+.modal-wrapper {
+  max-height: 30rem;
+}

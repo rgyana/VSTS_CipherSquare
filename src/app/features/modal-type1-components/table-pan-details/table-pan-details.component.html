@@ -1,0 +1,18 @@
+<table class="table table-bordered" *ngIf="panDetails">
+    <thead>
+        <tr>
+            <th class="">PAN</th>
+            <th class="">NAME</th>
+            <th class="">FATHER NAME</th>
+            <th class="text-end ">DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="">{{panDetails.panNumber ? panDetails.panNumber : 'No Data'}}</td>
+            <td class="">{{panDetails.panName ? panDetails.panName : 'No Data'}}</td>
+            <td class="">{{panDetails.panFatherName ? panDetails.panFatherName : 'No Data'}}</td>
+            <td class="text-end">{{panDetails.panDOB ? panDetails.panDOB : 'No Data'}}</td>
+        </tr>
+    </tbody>
+</table>

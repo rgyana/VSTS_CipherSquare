@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary me-3">Move to Recode Folder</button>
+    <button type="button" class="btn btn-info me-3">Add Secondary Proof</button>
+    <button type="button" class="btn btn-warning me-3">Reject</button>
+</div>
+<div class="col-6 d-flex flex-column mt-2 px-0">
+
+    <div class="address-proof-details d-flex flex-column align-items-start">
+        <div class="fs-6 text-dark">KYC Type: <span
+                class="fs-6 fw-semibold">{{modalCompData?.result?.residential_proof?.kyc_type ?
+                modalCompData?.result?.residential_proof?.kyc_type : 'Not Found'}}</span></div>
+    </div>
+
+    <div class="addressproof-pic d-flex mt-3">
+        <!-- Front-side photo -->
+        <div class="col-6 d-flex flex-column px-0">
+            <div class="rounded-3 bg-light-secondary p-3 w-100">
+                <img class="rounded w-100" *ngIf="this.modalCompData?.result?.residential_proof?.proofThumbPhoto"
+                    [src]="proofPhotoThumbnailFileNameSrc" alt="proof_front_thumb">
+                <p class="my-4 py-3 text-center"
+                    *ngIf="!this.modalCompData?.result?.residential_proof?.proofThumbPhoto">
+                    No Image Found
+                </p>
+            </div>
+            <a class="fs-6 mt-2 text-primary align-self-end"
+                *ngIf="this.modalCompData?.result?.residential_proof?.proofThumbPhoto"
+                (click)="openPhotoInNewTab(this.modalCompData?.result?.residential_proof?.proofPhoto,'Address Proof Front-side')"
+                role="button">Open in new tab</a>
+        </div>
+
+        <!-- Back-side photo -->
+        <div class="col-6 d-flex flex-column align-items-end px-0 ms-3">
+            <div class="rounded-3 bg-light-secondary p-3 w-100">
+                <img class="rounded w-100" *ngIf="this.modalCompData?.result?.residential_proof?.proofThumbPhotoBack"
+                    [src]="proofPhotoThumbnailBackFileNameSrc" alt="proof_back_thumb">
+                <p class="my-4 py-3 text-center"
+                    *ngIf="!this.modalCompData?.result?.residential_proof?.proofThumbPhotoBack">
+                    No Image Found
+                </p>
+            </div>
+            <a class="fs-6 mt-2 text-primary" *ngIf="this.modalCompData?.result?.residential_proof?.proofThumbPhotoBack"
+                (click)="openPhotoInNewTab(this.modalCompData?.result?.residential_proof?.proofPhotoBack,'Address Proof Back-side')"
+                role="button">Open in new tab</a>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex flex-column my-2" *ngIf="addressProofResponse?.result">
+    <div class="fs-6 mt-2 mb-3 text-dark">{{addressProofResponse.message}}</div>
+
+    <!-- Only NON AADHAR is functionality is added now -->
+    <app-table-adrs-proof-details class="col-12 px-0" *ngIf="modalCompData?.result?.kyc_mode === 'Non Aadhar'"
+        [addressProofTableData]="addressProofResponse.result"></app-table-adrs-proof-details>
+    <!-- Only NON AADHAR is functionality is added now -->
+</div>
+
+<div class="col-4 mt-2 ms-auto">
+    <p class=" rounded-2 px-3 py-2 text-white text-center"
+        [ngClass]="[this.modalCompData?.result?.residential_proof?.verified == 5? 'bg-success' : 'bg-warning']">
+        {{this.modalCompData?.result?.residential_proof?.verified == 5? 'Verified' : 'Not Verified'}}</p>
+</div>

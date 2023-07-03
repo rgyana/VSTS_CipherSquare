@@ -1,0 +1,62 @@
+<div class="d-flex flex-wrap align-items-end" *ngIf="this.modalCompData?.result">
+
+    <div class="col-6 my-2">
+        <p class="text-black">Firm Name</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.firmName ?
+            this.modalCompData?.result?.business_details?.firmName : 'No Data'}}</p>
+    </div>
+    <div class="col-6 my-2">
+        <p class="text-black">Experience</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.workExperiance ?
+            this.modalCompData?.result?.business_details?.workExperiance : 'No Data'}}</p>
+    </div>
+    <div class="col-12 my-2">
+        <p class="text-black">Full Address</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.businessAddress ?
+            this.modalCompData?.result?.business_details?.businessAddress : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">City</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.businessCity ?
+            this.modalCompData?.result?.business_details?.businessCity : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">District</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.businessDistrict ?
+            this.modalCompData?.result?.business_details?.businessDistrict : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">State</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.businessState ?
+            this.modalCompData?.result?.business_details?.businessState : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">PIN Code</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.businessPincode ?
+            this.modalCompData?.result?.business_details?.businessPincode : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Landmark</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.business_details?.businessLandmark ?
+            this.modalCompData?.result?.business_details?.businessLandmark : 'No Data'}}</p>
+    </div>
+
+    <div class="col-4 my-2 ms-auto">
+        <p class=" rounded-2 form-control text-white text-center"
+            [ngClass]="[this.modalCompData?.result?.business_details?.verified == 1? 'bg-success' : 'bg-warning']">
+            {{this.modalCompData?.result?.business_details?.verified == 1? 'Verified' : 'Not
+            Verified'}} </p>
+    </div>
+
+    <div class="col-4 my-3 ms-auto">
+        <button class="btn btn-info form-control" (click)="onEditBtnClicked()">Edit</button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="content" class="main-content">
+    <div class="layout-px-spacing d-flex flex-column">
+
+        <!-- Breadcrumb start -->
+        <div class="page-header">
+            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">
+                        <a href="">User List</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Breadcrumb end -->
+
+        <!-- Content -->
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing br-4">
+
+                <app-user-add-panel></app-user-add-panel>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing br-4">
+                <app-user-list-table [userDetailsArray$]="getUserDetailsObs()"></app-user-list-table>
+            </div>
+        </div>
+
+    </div>
+</div>

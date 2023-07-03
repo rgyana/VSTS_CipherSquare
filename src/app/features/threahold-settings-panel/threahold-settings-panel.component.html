@@ -1,0 +1,121 @@
+<div class="statbox box box-shadow">
+    <div class="widget">
+        <div class="widget-content widget-content-area p-4 br-6">
+
+            <!-- Form content starts -->
+            <form [formGroup]="thresholdSettingsForm" (ngSubmit)="onSaveBtnClicked()">
+                <div class=" d-flex flex-wrap align-items-end">
+
+                    <div class="col-4 px-0 mb-3">
+                        <label class="form-label my-1 text-primary fs-6 fw-semibold ps-3">Name Match Threshold</label>
+                        <div class="d-flex">
+                            <div class="col-6 my-2">
+                                <label for="nameMatchMinValue" class="form-label ">Minimun</label>
+                                <input type="number" class="form-control" name="nameMatchMinValue"
+                                    formControlName="nameMatchMinValue">
+                            </div>
+
+                            <div class="col-6 my-2 ">
+                                <label for="nameMatchMaxValue" class="form-label ">Maximum</label>
+                                <input type="number" class="form-control" name="nameMatchMaxValue"
+                                    formControlName="nameMatchMaxValue">
+                            </div>
+                        </div>
+                        <span class="text-dark float-end me-3">0 to 1</span>
+                    </div>
+
+                    <div class="col-8 px-0 d-flex">
+
+                        <div class="col-4 mb-3">
+                            <label class="form-label my-1 text-primary fs-6 fw-semibold">Image Quality Value</label>
+                            <div class="my-2">
+                                <label for="imgQualityValue" class="form-label "></label>
+                                <input type="number" class="form-control" name="imgQualityValue"
+                                    formControlName="imgQualityValue">
+                            </div>
+                            <span class="text-dark float-end">0 to 1</span>
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label class="form-label my-1 text-primary fs-6 fw-semibold">Video Match Value</label>
+                            <div class="my-2">
+                                <label for="videoMatchValue" class="form-label "></label>
+                                <input type="number" class="form-control" name="videoMatchValue"
+                                    formControlName="videoMatchValue">
+                            </div>
+                            <span class="text-dark float-end">0 to 100</span>
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label class="form-label my-1 text-primary fs-6 fw-semibold">Address Match Value</label>
+                            <div class="my-2">
+                                <label for="addressMatchValue" class="form-label "></label>
+                                <input type="number" class="form-control" name="addressMatchValue"
+                                    formControlName="addressMatchValue">
+                            </div>
+                            <span class="text-dark float-end">0 to 100</span>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="col-12 mt-5 d-flex">
+
+                        <div class="col-6 mb-3 d-flex flex-column">
+
+                            <label class="form-label text-primary fs-6  my-2 fw-semibold">Video Verification</label>
+                            <div
+                                class="verification-input-container d-flex justify-content-between align-items-center py-2 px-4 border border-2 rounded-3">
+                                <div class="text-dark">{{ (this.thresholdSettingsForm.get('videoVerification')?.value) ?
+                                    'Signzy Verification' : 'Signzy API'}}</div>
+                                <label class="switch s-primary my-2">
+                                    <input type="checkbox" class="form-control" name="videoVerification"
+                                        formControlName="videoVerification">
+                                    <span class="slider align-middle"></span>
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-6 mb-3 d-flex flex-column">
+
+                            <label class="form-label text-primary fs-6  my-2 fw-semibold">PAN Verification</label>
+                            <div
+                                class="verification-input-container d-flex justify-content-between align-items-center py-2 px-4 border border-2 rounded-3">
+                                <div class="text-dark">{{ (this.thresholdSettingsForm.get('panVerification')?.value) ?
+                                    'Signzy Verification' : 'Signzy API'}}</div>
+                                <label class="switch s-primary my-2">
+                                    <input type="checkbox" class="form-control" name="panVerification"
+                                        formControlName="panVerification">
+                                    <span class="slider align-middle"></span>
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="rd_1" name="rd" class="custom-control-input" value="Yes">
+                            <label class="custom-control-label green" for="rd_1">Signzy</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="rd_2" name="rd" class="custom-control-input" value="Yes">
+                            <label class="custom-control-label green" for="rd_2">Paysprint</label>
+                        </div>
+                    </div> -->
+
+
+                    <div class="col-2 mt-3 mb-1 ms-auto">
+                        <button type="submit" class="btn btn-primary form-control">
+                            Save
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </form>
+            <!-- form content ends -->
+
+        </div>
+    </div>
+
+</div>

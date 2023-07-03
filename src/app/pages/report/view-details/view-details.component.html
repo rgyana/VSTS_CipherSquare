@@ -1,0 +1,38 @@
+<div id="content" class="main-content">
+    <div class="layout-px-spacing d-flex flex-column">
+
+        <!-- Breadcrumb start -->
+        <div class="page-header">
+            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">
+                        <a href="">View Details</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Breadcrumb end -->
+
+        <!-- Content -->
+        <div class="row layout-top-spacing">
+
+            <div class="col-lg-9 col-md-8 col-sm-8 col-12 layout-spacing">
+                <app-view-details-panel [recordData]="getRecordData()"></app-view-details-panel>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-12 layout-spacing">
+                <div class="statbox box box-shadow">
+                    <div class="widget-content widget-content-area p-4 br-6 d-flex flex-column">
+
+                        <button class="btn btn-info col-12 mb-4">Print</button>
+                        <button class="btn btn-primary col-12 mb-4" (click)="previewRecordBtnClicked()">Preview</button>
+                        <button class="btn btn-warning col-12" (click)="goToAdminReportPage()">Back</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

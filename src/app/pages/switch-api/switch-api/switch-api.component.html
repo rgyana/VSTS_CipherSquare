@@ -1,0 +1,76 @@
+<div id="content" class="main-content">
+    <div class="layout-px-spacing d-flex flex-column">
+
+        <!-- Breadcrumb start -->
+        <div class="page-header mt-2">
+            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">
+                        <a>Admin Switch API</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Breadcrumb end -->
+
+        <!-- Content -->
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="statbox box box-shadow">
+                    <div class="widget">
+                        <div class="table-responsive">
+                            <table id="zero-config" class="table dt-table-hover dataTable" role="grid"
+                                aria-describedby="zero-config_info">
+
+                                <!-- table headings -->
+                                <thead>
+                                    <tr role="row">
+                                        <th scope="col">Heading</th>
+                                        <th scope="col">API</th>
+                                    </tr>
+                                </thead>
+                                <!-- table headings ends -->
+
+                                <!-- table details -->
+                                <tbody *ngFor="let data of adminSwitchAPIResponse; let i = index">
+                                    <tr>
+                                        <td>
+                                            <label class="form-label my-1 text-primary fs-6 fw-semibold">{{data.method |
+                                                replaceUnderscore | titlecase}}</label>
+                                        </td>
+
+                                        <td>
+                                            <div class="col-4 mt-1 d-flex">
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" value="signzy" class="custom-input"
+                                                        [(ngModel)]="fetchApiArray[i]">
+                                                    <label for="radio_1">Signzy</label>
+                                                </div>
+
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" value="paysprint" class="custom-input"
+                                                        [(ngModel)]="fetchApiArray[i]">
+                                                    <label for="radio_2">Paysprint</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!-- table details ends -->
+
+                                <!-- <div class="col-4 mt-3 mb-1">
+                                    <button type="submit" class="btn btn-primary form-control">
+                                        Save
+                                    </button>
+                                </div> -->
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

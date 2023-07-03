@@ -1,0 +1,35 @@
+<div class="container height-150 d-flex justify-content-center align-items-center">
+    <div class="position-absolute">
+        <div class="card p-2 text-center">
+            <div class="card-heading">
+                <h6>OTP Verification</h6>
+            </div>
+            <h6>Please enter the one time password <br> to verify your account</h6>
+            <div> <span>A code has been sent to</span> <small>*******9897</small> </div>
+
+            <form [formGroup]="otpInput" (ngSubmit)="verifyOtp()">
+                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                    <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1"
+                        (keyup)="focusNext($event)" formControlName="input1" />
+                    <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1"
+                        (keyup)="focusNext($event)" formControlName="input2" />
+                    <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1"
+                        (keyup)="focusNext($event)" formControlName="input3" />
+                    <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1"
+                        (keyup)="focusNext($event)" formControlName="input4" />
+                </div>
+                <div class="mt-4"> <button class="btn btn-success px-4 validate" type="submit">Verify</button>
+                    <small class="text-danger" *ngIf="otpInput.value.errors">Input is invalid</small>
+                </div>
+
+            </form>
+
+            <div class="card-2">
+                <div class="content d-flex justify-content-center align-items-center"> <span>Didn't get the code</span>
+                    <a type="submit" class="ms-3" (click)="resendOtp()">Resend</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

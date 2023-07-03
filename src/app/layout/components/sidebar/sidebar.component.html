@@ -1,0 +1,121 @@
+<!--  BEGIN SIDEBAR  -->
+<div class="sidebar-wrapper sidebar-theme">
+
+    <nav id="compactSidebar">
+
+        <!-- profile pic -->
+        <ul class="navbar-nav theme-brand flex-row">
+            <li class="nav-item theme-logo">
+                <a [routerLink]="['/dashboard/analytics']">
+                    <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
+                </a>
+            </li>
+        </ul>
+        <!-- profile pic -->
+
+        <ul class="menu-categories">
+
+            <!-- dashboard navigation -->
+            <li class="menu" [routerLinkActive]="'active'">
+                <a [routerLink]="['/dashboard/analytics']" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-home">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <span>Dashboard</span>
+                    </div>
+                </a>
+            </li>
+            <!-- dashboard navigation ends -->
+
+            <!-- Report navigation -->
+            <li class="menu" [routerLinkActive]="'active'">
+                <a [routerLink]="['/reports']" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                                </path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                        </div>
+                        <span>Report</span>
+                    </div>
+                </a>
+            </li>
+            <!-- Report navigation -->
+
+            <!-- user navigation -->
+            <li class="menu" [routerLinkActive]="'active'">
+                <a [routerLink]="['/users/user-list']" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <span>Users</span>
+                    </div>
+                </a>
+            </li>
+            <!-- user navigation ends -->
+
+            <!-- settings navigation -->
+            <li class="menu" [routerLinkActive]="'active'">
+                <a [routerLink]="['/settings/threshold']" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Settings</span>
+                    </div>
+                </a>
+            </li>
+            <!-- settings navigation -->
+
+            <!-- switch api navigation -->
+            <li class="menu" [routerLinkActive]="'active'">
+                <a [routerLink]="['/switch-api/switch-api']" class="menu-toggle">
+                    <div class="base-menu">
+                        <div class="base-icons">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                <rect x="9" y="9" width="6" height="6"></rect>
+                                <line x1="9" y1="1" x2="9" y2="4"></line>
+                                <line x1="15" y1="1" x2="15" y2="4"></line>
+                                <line x1="9" y1="20" x2="9" y2="23"></line>
+                                <line x1="15" y1="20" x2="15" y2="23"></line>
+                                <line x1="20" y1="9" x2="23" y2="9"></line>
+                                <line x1="20" y1="14" x2="23" y2="14"></line>
+                                <line x1="1" y1="9" x2="4" y2="9"></line>
+                                <line x1="1" y1="14" x2="4" y2="14"></line>
+                            </svg>
+                        </div>
+                        <span>Switch API</span>
+                    </div>
+                </a>
+            </li>
+            <!-- switch api navigation ends -->
+
+        </ul>
+    </nav>
+
+</div>
+<!--  END SIDEBAR  -->

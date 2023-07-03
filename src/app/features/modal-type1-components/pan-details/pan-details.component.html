@@ -1,0 +1,35 @@
+<div class="col-12 d-flex justify-content-between mx-0 px-0 mt-1 align-items-center text-dark">
+    <div class="fs-5">PAN Number: <span class="fw-semibold">{{modalCompData?.result?.pan_details?.panNumber ?
+            modalCompData?.result?.pan_details?.panNumber : 'Not Found'}}</span></div>
+    <div>
+        <button type="button" class="btn btn-primary me-3">Move to Recode Folder</button>
+        <button type="button" class="btn btn-warning">Reject</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-3">
+        <p class="fs-6 fw-semibold">Pan Photo</p>
+        <div class="pan-image-holder rounded-3 bg-light-secondary p-3 w-100">
+            <img class="rounded w-100" *ngIf="this.modalCompData?.result?.pan_details?.panThumbPhoto"
+                [src]="panThumbnailFileNameSrc" alt="pan_thumbnail">
+            <p class="my-4 py-2 text-center" *ngIf="!this.modalCompData?.result?.pan_details?.panThumbPhoto">No Image Found
+            </p>
+        </div>
+
+        <a class="fs-6 mt-2 text-primary float-end" *ngIf="this.modalCompData?.result?.pan_details?.panThumbPhoto"
+            (click)="openPanInNewTab(this.modalCompData?.result?.pan_details?.panPhoto,'Pan Card')" role="button">Open in new tab</a>
+    </div>
+
+    <div class="col-9">
+        <p class="fs-6 fw-semibold">Pan Fetch Response</p>
+        <app-table-pan-details class="mb-4" [panDetails]="panFetchResponse"></app-table-pan-details>
+
+        <p class="fs-6 fw-semibold">Pan OCR Response</p>
+        <app-table-pan-details class="mb-4" [panDetails]="panExtractionResponse"></app-table-pan-details>
+    </div>
+
+    <div class="col-4 my-2 ms-auto">
+        <p class=" rounded-2 form-control text-white text-center"
+            [ngClass]="[this.modalCompData?.result?.pan_details?.verified == 5? 'bg-success' : 'bg-warning']">
+            {{this.modalCompData?.result?.pan_details?.verified == 5? 'Verified' : 'Not Verified'}}</p>
+    </div>

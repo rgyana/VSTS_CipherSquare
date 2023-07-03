@@ -1,0 +1,94 @@
+<div class="d-flex flex-wrap align-items-end" *ngIf="this.modalCompData?.result">
+
+    <div class="col-4 my-2 ">
+        <p class="text-black">Name</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.name ? this.modalCompData?.result?.basic_details?.name : 'No
+            Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Email</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.email ? this.modalCompData?.result?.basic_details?.email : 'No
+            Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Mobile Number</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.mobileNumber ? this.modalCompData?.result?.mobileNumber : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Father</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.fatherName ?
+            this.modalCompData?.result?.basic_details?.fatherName : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Gender</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.gender ? this.modalCompData?.result?.basic_details?.gender :
+            'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">DOB</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.dob ? this.modalCompData?.result?.basic_details?.dob : 'No
+            Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Qualification</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.qualification ?
+            this.modalCompData?.result?.basic_details?.qualification : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Category</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.category ? this.modalCompData?.result?.basic_details?.category
+            : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Handicapped</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.physicallyHandicapped ?
+            this.modalCompData?.result?.basic_details?.physicallyHandicapped : 'No Data'}}</p>
+    </div>
+
+    <div class="col-4 my-2">
+        <p class="text-black">Occupation</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.alternateOccupationType ?
+            this.modalCompData?.result?.basic_details?.alternateOccupationType
+            : 'No Data'}}</p>
+    </div>
+
+    <div class="col-4 my-2">
+        <p class="text-black">Provider</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.provider ? this.modalCompData?.result?.basic_details?.provider
+            : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Entity</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.entityType ?
+            this.modalCompData?.result?.basic_details?.entityType : 'No Data'}}</p>
+    </div>
+    <div class="col-4 my-2">
+        <p class="text-black">Alternative Number</p>
+        <p class="bg-light-primary rounded-2 form-control text-black">
+            {{this.modalCompData?.result?.basic_details?.alternateNumber ?
+            this.modalCompData?.result?.basic_details?.alternateNumber : 'No Data'}}</p>
+    </div>
+
+    <div class="col-4 my-2">
+        <p class=" rounded-2 form-control text-white text-center"
+            [ngClass]="[this.modalCompData?.result?.basic_details?.verified == 1? 'bg-success' : 'bg-warning']">
+            {{this.modalCompData?.result?.basic_details?.verified == 1? 'Verified' : 'Not Verified'}}</p>
+    </div>
+
+    <div class="col-4 my-2 ms-auto">
+        <button class="btn btn-info col-12 form-control" (click)="onEditBtnClicked()">Edit</button>
+    </div>
+
+</div>

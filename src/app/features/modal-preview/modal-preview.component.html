@@ -1,0 +1,445 @@
+<div class="modal-content">
+        <!-- Modal Body -->
+        <div class="modal-body d-flex flex-column mx-5">
+                <!-- <h5>{{recordData | json}}</h5> -->
+
+                <!-- Basic Details -->
+                <div class="d-flex flex-column mt-5 mb-4">
+                        <div class="d-flex">
+                                <div class="col-9 p-0">
+                                        <div class="col-12 mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                                BASIC DETAILS
+                                        </div>
+
+                                        <div class="col-12 text-black py-0 pe-0 ps-1 d-flex mb-3 fw-semibold">
+                                                Applicant's Name:
+                                                <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                        modalContent.recordData.name
+                                                        }}</span>
+                                        </div>
+
+                                        <div class="col-12 text-black py-0 pe-0 ps-1 d-flex mb-3 fw-semibold">
+                                                Parent's Name:
+                                                <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                        modalContent.recordData.parentName
+                                                        }}</span>
+                                        </div>
+
+                                        <div class="col-12 text-black py-0 pe-0 ps-1 d-flex mb-3">
+                                                <div class="col-5 p-0 d-flex fw-semibold">
+                                                        Mobile Number:
+                                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                                modalContent.recordData.mobileNumber
+                                                                }}</span>
+                                                </div>
+                                                <div class="col-1"></div>
+                                                <div class="col-6 p-0 d-flex fw-semibold">
+                                                        Gender:
+                                                        <!-- <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{modalContent.recordData.gender}}
+                                                        </span> -->
+                                                        <span class="n-chk ms-2">
+                                                                <label
+                                                                        class="new-control new-radio square-radio radio-primary text-black">
+                                                                        <input type="radio" class="new-control-input"
+                                                                                name="custom-radio-3" value="Male"
+                                                                                [(ngModel)]="modalContent.recordData.gender" />
+                                                                        <span class="new-control-indicator"></span>Male
+                                                                </label>
+                                                                <label
+                                                                        class="new-control new-radio square-radio radio-primary text-black">
+                                                                        <input type="radio" class="new-control-input"
+                                                                                name="custom-radio-3" value="Female"
+                                                                                [(ngModel)]="modalContent.recordData.gender" />
+                                                                        <span
+                                                                                class="new-control-indicator"></span>Female
+                                                                </label>
+                                                        </span>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-3 p-0">
+                                        <img class="img-fluid w-75 h-auto float-end"
+                                                src="../../../assets/img/blank-profile-picture.png" alt="profile_pic" />
+                                </div>
+                        </div>
+                        <div class="text-black py-0 pe-0 ps-1 d-flex mb-3">
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        Date of Birth:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.dob
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Qualification:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.qualification
+                                                }}</span>
+                                </div>
+                        </div>
+                        <div class="text-black py-0 pe-0 ps-1 d-flex mb-3">
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Physically Handicapped:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.physicallyHandicapped
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Alternative Ocuupation:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.alternativeOccupation
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-4 p-0 d-flex fw-semibold">
+                                        Provider:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.provider
+                                                }}</span>
+                                </div>
+                        </div>
+                        <div class="text-black py-0 pe-0 ps-1 d-flex mb-3">
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        Entity Type:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.entityType
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-6 p-0 d-flex fw-semibold">
+                                        Alt. Mobile Number:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.alternativeNumber
+                                                }}</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Residential Information -->
+                <div class="d-flex flex-column mb-4">
+                        <div class="mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                RESIDENTIAL INFORMATION
+                        </div>
+                        <div class="d-flex fw-semibold mb-3 text-black py-0 pe-0 ps-1">
+                                Full Address:
+                                <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                        modalContent.recordData.residentialFullAddress
+                                        }}</span>
+                        </div>
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        Landmark:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.residentialLandmark
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-6 p-0 d-flex fw-semibold">
+                                        District:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.residentialDistrict
+                                                }}</span>
+                                </div>
+                        </div>
+
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-4 p-0 d-flex fw-semibold">
+                                        City:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.residentialCity
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        State:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.residentialState
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        PIN Code:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.residentialPinCode
+                                                }}</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Business Information -->
+                <div class="d-flex flex-column mb-4">
+                        <div class="mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                BUSINESS INFORMATION
+                        </div>
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-6 p-0 d-flex fw-semibold">
+                                        Full Name:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.name
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        Experience:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">Nil</span>
+                                </div>
+                        </div>
+                        <div class="d-flex fw-semibold mb-3 text-black py-0 pe-0 ps-1">
+                                Full Address:
+                                <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                        modalContent.recordData.businessFullAddress
+                                        }}</span>
+                        </div>
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-6 p-0 d-flex fw-semibold">
+                                        Landmark:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.businessLandmark
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        District:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.businessDistrict
+                                                }}</span>
+                                </div>
+                        </div>
+
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-4 p-0 d-flex fw-semibold">
+                                        City:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.businessCity
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        State:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.businessState
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        PIN Code:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.businessPinCode
+                                                }}</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- KYC Document -->
+                <div class="d-flex flex-column mb-4">
+                        <div class="mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                KYC DOCUMENT (Submit self-attested documents for one of the each below)
+                        </div>
+                        <div class="d-flex fw-semibold mb-2 text-black py-0 pe-0 ps-1">
+                                1.Proof of Identity:
+                                <!-- <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{modalContent.recordData.proofOfIdentity}}
+                                </span> -->
+                                <div class="n-chk ms-3">
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfIdentityChecker('Pan Card')" />
+                                                <span class="new-control-indicator"></span>Pan Card
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfIdentityChecker('Voter Id Card')" />
+                                                <span class="new-control-indicator"></span>Voter Id Card
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfIdentityChecker('Aadhaar Card')" />
+                                                <span class="new-control-indicator"></span>Aadhaar Card
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfIdentityChecker('Driving Licence')" />
+                                                <span class="new-control-indicator"></span>Driving Licence
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfIdentityChecker('Passport')" />
+                                                <span class="new-control-indicator"></span>Passport
+                                        </label>
+                                </div>
+                        </div>
+                        <div class="d-flex fw-semibold mb-3 text-black py-0 pe-0 ps-1">
+                                Other (specify):
+                                <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                        modalContent.recordData.otherProofSpecify
+                                        }}</span>
+                        </div>
+                        <div class="d-flex fw-semibold text-black py-0 pe-0 ps-1">
+                                1.Proof of Address:
+                                <!-- <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{modalContent.recordData.proofOfAddress}}
+                                </span> -->
+                                <div class="n-chk ms-3">
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfAddressChecker('Pan Card')" />
+                                                <span class="new-control-indicator"></span>Pan Card
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfAddressChecker('Voter Id Card')" />
+                                                <span class="new-control-indicator"></span>Voter Id Card
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfAddressChecker('Aadhaar Card')" />
+                                                <span class="new-control-indicator"></span>Aadhaar Card
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfAddressChecker('Driving Licence')" />
+                                                <span class="new-control-indicator"></span>Driving Licence
+                                        </label>
+                                        <label class="new-control new-checkbox checkbox-primary text-black">
+                                                <input type="checkbox" class="new-control-input"
+                                                        [checked]="kycProofOfAddressChecker('Passport')" />
+                                                <span class="new-control-indicator"></span>Passport
+                                        </label>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Bank Details -->
+                <div class="d-flex flex-column mb-4">
+                        <div class="mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                BANK DETAILS
+                        </div>
+
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-6 p-0 d-flex fw-semibold">
+                                        Account Type:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.accountType
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        Bank Name:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.bankName
+                                                }}</span>
+                                </div>
+                        </div>
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-6 p-0 d-flex fw-semibold">
+                                        IFSC Code:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.ifscCode
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-5 p-0 d-flex fw-semibold">
+                                        A/c Number:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.accountNumber
+                                                }}</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Name Match Results -->
+                <div class="d-flex flex-column mb-4">
+                        <div class="mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                NAME MATCH RESULTS
+                        </div>
+
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-4 p-0 d-flex fw-semibold">
+                                        Name1:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.matchName1
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Name2:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.matchName2
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Match Between:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.matchBetween
+                                                }}</span>
+                                </div>
+                        </div>
+
+                        <div class="d-flex text-black mb-3 py-0 pe-0 ps-1">
+                                <div class="col-4 p-0 d-flex fw-semibold">
+                                        Match Reason:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.matchReason
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Match Result:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.matchResult
+                                                }}</span>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3 p-0 d-flex fw-semibold">
+                                        Match Score:
+                                        <span class="flex-grow-1 ms-1 border-bottom fw-normal">{{
+                                                modalContent.recordData.matchScore
+                                                }}</span>
+                                </div>
+                        </div>
+                </div>
+
+                <!-- Uploaded Documents -->
+                <div class="d-flex flex-column mb-4">
+                        <div class="mb-4 bg-primary text-white fw-semibold fs-5 px-2 py-1">
+                                UPLOADED DOCUMENTS
+                        </div>
+                        <div class="d-flex img-container flex-wrap mb-3 py-0 pe-0 ps-1">
+                                <div class="col-6 d-flex flex-column align-items-end px-4 py-3">
+                                        <div class="pan-image-holder rounded-3 bg-light-secondary p-5 w-100">
+                                                <img class="rounded w-100"
+                                                        src="../../../assets/img/aadhar_front_example.jpg"
+                                                        alt="front_pic" />
+                                        </div>
+                                </div>
+                                <div class="col-6 d-flex flex-column align-items-end px-4 py-3">
+                                        <div class="pan-image-holder rounded-3 bg-light-secondary p-5 w-100">
+                                                <img class="rounded w-100"
+                                                        src="../../../assets/img/aadhar_back_example.png"
+                                                        alt="front_pic" />
+                                        </div>
+                                </div>
+                                <div class="col-6 d-flex flex-column align-items-end px-4 py-3">
+                                        <div class="pan-image-holder rounded-3 bg-light-secondary p-5 w-100">
+                                                <img class="rounded w-100"
+                                                        src="../../../assets/img/aadhar_front_example.jpg"
+                                                        alt="front_pic" />
+                                        </div>
+                                </div>
+                                <div class="col-6 d-flex flex-column align-items-end px-4 py-3">
+                                        <div class="pan-image-holder rounded-3 bg-light-secondary p-5 w-100">
+                                                <img class="rounded w-100"
+                                                        src="../../../assets/img/aadhar_back_example.png"
+                                                        alt="front_pic" />
+                                        </div>
+                                </div>
+                                <div class="col-6 d-flex flex-column align-items-end px-4 py-3 ms-auto me-auto">
+                                        <div class="pan-image-holder rounded-3 bg-light-secondary p-5 w-100">
+                                                <img class="rounded w-100" src="../../../assets/img/sample-pan-card.jpg"
+                                                        alt="front_pic" />
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>

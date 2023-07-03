@@ -1,0 +1,115 @@
+<div class="statbox box box-shadow">
+    <div class="widget">
+        <div class="widget-content widget-content-area p-2 br-6">
+
+            <div class="row">
+                <form [formGroup]="filterPanelForm" (ngSubmit)="filterData()">
+                    <div class="d-flex flex-wrap">
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+                            <input type="text" class="form-control" placeholder="Mobile Number/PAN Number/Name/R.Code.."
+                                name="uservalue" formControlName="uservalue">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr name="fromdate"
+                                formControlName="fromdate" placeholder="From Date" [altInput]="true"
+                                [convertModelValue]="false" altFormat="Y-m-d" dateFormat="Y-m-d">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr name="todate"
+                                formControlName="todate" placeholder="To Date" [altInput]="true"
+                                [convertModelValue]="false" altFormat="Y-m-d" dateFormat="Y-m-d">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr
+                                name="frommodifieddate" formControlName="frommodifieddate"
+                                placeholder="Modified From Date" [altInput]="true" [convertModelValue]="false"
+                                altFormat="Y-m-d" dateFormat="Y-m-d">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr
+                                placeholder="Modified To Date" name="modifiedtodate" formControlName="modifiedtodate"
+                                [altInput]="true" [convertModelValue]="false" altFormat="Y-m-d" dateFormat="Y-m-d">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr
+                                placeholder="R Code From Date" name="rcodefromdate" formControlName="rcodefromdate"
+                                [altInput]="true" [convertModelValue]="false" altFormat="Y-m-d" dateFormat="Y-m-d">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr
+                                placeholder="R Code To Date" name="rcodetodate" formControlName="rcodetodate"
+                                [altInput]="true" [convertModelValue]="false" altFormat="Y-m-d" dateFormat="Y-m-d">
+                        </div>
+
+                        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+                            <select class="form-control form-select" name="KYCMode" formControlName="KYCMode">
+                                <option value="" disabled selected hidden>KYC Mode</option>
+                                <option [value]="option.value" *ngFor="let option of KYCModeOptions">{{option.name}}
+                                </option>
+                            </select>
+                        </div> -->
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control" placeholder="KYC Status" name="kycStatus"
+                                formControlName="kycStatus">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+                            <input type="text" class="form-control" placeholder="KYC Mode" name="kycMode"
+                                formControlName="kycMode">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <input type="text" class="form-control" placeholder="KYC Mode" name="page"
+                                formControlName="page">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+                            <select class="form-control form-select" name="sortby" formControlName="sortby">
+                                <option value="" disabled selected hidden>Sort By</option>
+                                <option value="created_at">Created At</option>
+                                <option value="updated_at">Updated At</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngIf="isAdvanceFilterBtnClicked">
+                            <select class="form-control form-select" name="sortdata" formControlName="sortdata">
+                                <option value="" disabled selected hidden>Sort By</option>
+                                <option value="desc">Descending</option>
+                                <option value="asc">Ascending</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+                            <button type="submit" class="btn btn-success form-control">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="row justify-content-end px-3 mt-2">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <button class="btn btn-primary float-end" (click)="advanceFilterBtnClick()"> {{
+                        isAdvanceFilterBtnClicked ? 'Minimise Filter' : 'Advance Filter' }} <svg viewBox="0 0 24 24"
+                            width="24" height="24" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round" class="css-i6dzq1">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,90 @@
+<div class="px-3">
+    <h2 class="fs-2 text-primary">Update Basic Details</h2>
+</div>
+
+<form [formGroup]="updatedBasicDetails" (ngSubmit)="onBasicDetailsUpdateBtnClicked()">
+    <div class="d-flex flex-wrap align-items-end">
+
+        <div class="col-4 my-2">
+            <label for="userName" class="form-label">Name</label>
+            <input type="text" class="form-control" name="userName" formControlName="userName">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userEmail" class="form-label">Email</label>
+            <input type="text" class="form-control" name="userEmail" formControlName="userEmail">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userMobileNumber" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" name="userMobileNumber" formControlName="userMobileNumber">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userFather" class="form-label">Father</label>
+            <input type="text" class="form-control" name="userFather" formControlName="userFather">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userGender" class="form-label">Gender</label>
+            <select class="form-control form-select" name="userGender" formControlName="userGender">
+                <option value="" disabled selected hidden></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Transgender">Transgender</option>
+            </select>
+        </div>
+        <div class="col-4 my-2">
+            <label for="userDOB" class="form-label">DOB</label>
+            <input type="text" class="form-control form-select fpickrDate" mwlFlatpickr name="userDOB"
+                formControlName="userDOB" [altInput]="true" [convertModelValue]="false" altFormat="d/m/Y"
+                dateFormat="d/m/Y">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userQualification" class="form-label">Qualification</label>
+            <input type="text" class="form-control" name="userQualification" formControlName="userQualification">
+            <!-- <select class="form-control form-select" name="userQualification" formControlName="userQualification">
+                <option value="" disabled selected hidden></option>
+                <option value="none">None</option>
+                <option value="basic">Basic</option>
+                <option value="advanced">Advanced</option>
+            </select> -->
+        </div>
+        <div class="col-4 my-2">
+            <label for="userCategory" class="form-label">Category</label>
+            <select class="form-control form-select" name="userCategory" formControlName="userCategory">
+                <option value="" disabled selected hidden></option>
+                <option value="reserved">Reserved</option>
+                <option value="General">General</option>
+            </select>
+        </div>
+        <div class="col-4 my-2">
+            <label for="userHandicapped" class="form-label">Handicapped</label>
+            <select class="form-control form-select" name="userHandicapped" formControlName="userHandicapped">
+                <option value="" disabled selected hidden></option>
+                <option value="Handicapped">Handicapped</option>
+                <option value="Not Handicapped">Not Handicapped</option>
+            </select>
+        </div>
+        <div class="col-4 my-2">
+            <label for="userOccupation" class="form-label">Occupation</label>
+            <input type="text" class="form-control" name="userOccupation" formControlName="userOccupation">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userProvider" class="form-label">Provider</label>
+            <input type="text" class="form-control" name="userProvider" formControlName="userProvider">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userEntity" class="form-label">Entity</label>
+            <input type="text" class="form-control" name="userEntity" formControlName="userEntity">
+        </div>
+        <div class="col-4 my-2">
+            <label for="userAltNumber" class="form-label">Alternative Number</label>
+            <input type="text" class="form-control" name="userAltNumber" formControlName="userAltNumber">
+        </div>
+
+        <div class="col-4 my-3 ms-auto">
+            <button type="submit" class="btn btn-primary form-control">
+                Update
+            </button>
+        </div>
+
+    </div>
+
+</form>

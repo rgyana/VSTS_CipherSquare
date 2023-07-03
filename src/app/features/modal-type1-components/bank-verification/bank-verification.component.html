@@ -1,0 +1,141 @@
+<div class="d-flex justify-content-end align-items-center">
+    <button type="button" class="btn btn-primary me-3">Move to Recode Folder</button>
+    <button type="button" class="btn btn-warning me-3">Reject</button>
+</div>
+
+<div class="approved-data mt-2" *ngIf="this.modalCompData?.result && (!isUpdatingBankDetails)">
+
+    <div class="d-flex flex-wrap align-items-end">
+
+        <div class="col-4 my-2">
+            <p class="text-black">Account Type</p>
+            <p class="bg-light-primary rounded-2 text-black form-control">
+                {{this.modalCompData?.result?.bank_details?.bankAccountType ?
+                this.modalCompData?.result?.bank_details?.bankAccountType : 'No Data'}}</p>
+        </div>
+        <div class="col-8 my-2">
+            <p class="text-black">Bank Name</p>
+            <p class="bg-light-primary rounded-2 form-control text-black">
+                {{this.modalCompData?.result?.bank_details?.bankName ?
+                this.modalCompData?.result?.bank_details?.bankName
+                : 'No Data'}}</p>
+        </div>
+        <div class="col-4 my-2">
+            <p class="text-black">Account Number</p>
+            <p class="bg-light-primary rounded-2 form-control text-black">
+                {{this.modalCompData?.result?.bank_details?.accountNumber ?
+                this.modalCompData?.result?.bank_details?.accountNumber : 'No Data'}}</p>
+        </div>
+        <div class="col-4 my-2">
+            <p class="text-black">IFSC Code</p>
+            <p class="bg-light-primary rounded-2 form-control text-black">
+                {{this.modalCompData?.result?.bank_details?.ifscCode ?
+                this.modalCompData?.result?.bank_details?.ifscCode
+                : 'No Data'}}</p>
+        </div>
+        <div class="col-4 my-2">
+            <p class="text-black">UTR</p>
+            <p class="bg-light-primary rounded-2 form-control text-black">
+                {{this.bankVerificationResponse?.result?.utr ? this.bankVerificationResponse?.result?.utr : 'No Data'}}
+            </p>
+        </div>
+        <div class="col-4 my-2">
+            <p class="text-black">Bene Name</p>
+            <p class="bg-light-primary rounded-2 form-control text-black">
+                {{this.bankVerificationResponse?.result?.benename ? this.bankVerificationResponse?.result?.benename :
+                'No Data'}}</p>
+        </div>
+        <div class="col-8 my-2">
+            <p class="text-black">Message</p>
+            <p class="bg-light-primary rounded-2 form-control text-black">
+                {{this.bankVerificationResponse?.result?.message ? this.bankVerificationResponse?.result?.message : 'No
+                Data'}}</p>
+        </div>
+
+    </div>
+
+    <div class="d-flex">
+        <div class="col-4 my-2 d-flex flex-column">
+            <p class="text-black">Passbook Photo</p>
+            <div class="rounded-3 bg-light-secondary p-3 w-100">
+                <img class="rounded w-100" *ngIf="passbookThumbPhotoSrc" [src]="passbookThumbPhotoSrc"
+                    alt="proof_front_thumb">
+                <p class="my-4 py-3 text-center" *ngIf="!passbookThumbPhotoSrc">
+                    No Image Found
+                </p>
+            </div>
+            <a class="fs-6 mt-2 text-primary align-self-end" *ngIf="passbookThumbPhotoSrc"
+                (click)="openPhotoInNewTab(this.modalCompData?.result?.bank_details?.passbookPhoto,'Passbook Photo')"
+                role="button">Open in new tab</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-wrap align-items-end">
+        <div class="col-4 my-2 ms-auto">
+            <p class=" rounded-2 form-control text-white text-center"
+                [ngClass]="[this.modalCompData?.result?.bank_details?.verified == 1? 'bg-success' : 'bg-warning']">
+                {{this.modalCompData?.result?.bank_details?.verified == 1? 'Verified' : 'Not Verified'}}</p>
+        </div>
+    </div>
+
+    <div class="d-flex flex-wrap align-items-end">
+        <div class="col-4 my-2 ms-auto">
+            <button class="btn btn-info form-control" (click)="onEditBtnClicked()">
+                Edit
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="update-data mt-2" *ngIf="isUpdatingBankDetails">
+    <div class="px-3">
+        <h2 class="fs-2 text-primary">Update Bank Details</h2>
+    </div>
+    <form [formGroup]="updatedBankInformation" (ngSubmit)="onUpdateBtnClicked()">
+        <div class="d-flex flex-wrap align-items-end">
+
+            <div class="col-4 my-2">
+                <label for="userAccountType" class="form-label">Select Account Type</label>
+                <input type="text" class="form-control" name="userAccountType" formControlName="userAccountType">
+                <!-- <select class="form-control form-select" name="userAccountType" formControlName="userAccountType">
+                    <option value="" disabled selected hidden>Select Account Type</option>
+                    <option value="male">Savings</option>
+                    <option value="female">Current</option>
+                    <option value="transgender">Credit</option>
+                </select> -->
+            </div>
+            <div class="col-8 my-2">
+                <label for="userBankName" class="form-label">Select Bank Name</label>
+                <input type="text" class="form-control" name="userBankName" formControlName="userBankName">
+                <!-- <select class="form-control form-select" name="userBankName" formControlName="userBankName">
+                    <option value="" disabled selected hidden>Select Bank Name</option>
+                    <option value="male">State Bank of India</option>
+                    <option value="female">ICICI Bank</option>
+                    <option value="transgender">HDFC Bank</option>
+                    <option value="transgender">Other</option>
+                </select> -->
+            </div>
+            <div class="col-4 my-2">
+                <label for="userIFSCCode" class="form-label">IFSC Code</label>
+                <input type="text" class="form-control" name="userIFSCCode" formControlName="userIFSCCode">
+            </div>
+            <div class="col-4 my-2">
+                <label for="userAccountNumber" class="form-label">Account Number</label>
+                <input type="text" class="form-control" name="userAccountNumber" formControlName="userAccountNumber">
+            </div>
+            <div class="col-4 my-2">
+                <label for="userConfirmAccountNumber" class="form-label">Confirm Account Number</label>
+                <input type="text" class="form-control" name="userConfirmAccountNumber"
+                    formControlName="userConfirmAccountNumber">
+            </div>
+            <div class="col-4 my-2 ms-auto">
+                <button type="submit" class="btn btn-primary form-control">
+                    Update
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
